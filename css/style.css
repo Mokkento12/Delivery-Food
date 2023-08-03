@@ -1,3 +1,5 @@
+@import 'animate.css';
+
 * {
   box-sizing: border-box;
 }
@@ -39,6 +41,7 @@ body {
 .input-search {
   width: 300px;
   background-image: url(../img/search.svg);
+  margin-left: auto;
 }
 
 .buttons {
@@ -68,6 +71,10 @@ body {
 
 .button-icon {
   margin-right: 6px;
+}
+
+.button-card-text {
+  margin-right: 10px;
 }
 
 .promo {
@@ -104,7 +111,6 @@ body {
 .section-heading {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   margin-bottom: 44px;
 }
 
@@ -115,12 +121,13 @@ body {
   font-weight: 700;
   line-height: normal;
   margin: 0;
+  margin-right: 30px;
 }
 
 .cards {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: space-between;
 }
 
@@ -131,16 +138,22 @@ body {
   overflow: hidden;
   margin-bottom: 30px;
   flex-basis: 31%;
+  text-decoration: none;
 }
 
 .card-image {
-  width: 384px;
-  height: 250px;
+  max-width: 100%;
+  height: auto;
   object-fit: cover;
 }
 
 .card-text {
   padding: 20px 23px 35px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
 }
 
 .card-heading {
@@ -151,10 +164,18 @@ body {
 
 .card-title {
   margin: 0;
+  margin-bottom: 10px;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
   line-height: 32px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-title-reg {
+  font-weight: 400;
 }
 
 .card-tag {
@@ -172,6 +193,20 @@ body {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.card-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.card-price-bold {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 32px;
+  margin-top: 10px;
 }
 
 .rating {
@@ -194,6 +229,15 @@ body {
 
 .price {
   margin-right: 10px;
+}
+
+.ingredients {
+  color: #8c8c8c;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px;
+  margin-bottom: 24px;
 }
 
 .category {
@@ -256,6 +300,125 @@ body {
   margin-right: 21px;
 }
 
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.40);
+  display: none;
+}
+
+.is-open {
+  display: flex;
+}
+
+.modal-dialog {
+  max-width: 780px;
+  width: 95%;
+  border-radius: 5px;
+  background: #FFF;
+  margin: auto;
+  padding: 40px 45px;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 45px;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.close {
+  font-size: 36px;
+  border: none;
+  background-color: transparent;
+}
+
+.modal-body {
+  margin-bottom: 52px;
+}
+
+.food-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #D9D9D9;
+  margin-bottom: 15px;
+}
+
+.food-price {
+  margin-left: auto;
+  margin-right: 47px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.food-name {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+.food-counter {
+  display: flex;
+  align-items: center;
+}
+
+.counter-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 39px;
+  height: 32px;
+  border-radius: 2px;
+  border: 1px solid #40A9FF;
+  background: #FFF;
+  font-size: 14px;
+  line-height: 22px;
+  color: #40A9FF;
+}
+
+.counter {
+  font-size: 16px;
+  line-height: 24px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.modal-pricetag {
+  border-radius: 5px;
+  background: #262626;
+  color: #FFF;
+  padding: 15px 20px;
+  font-size: 20px;
+  line-height: normal;
+}
+
 @media(max-width: 1366px) {
   .container {
     max-width: 960px;
@@ -310,7 +473,7 @@ body {
     flex-wrap: wrap;
   }
 
-  .rating {
+  .card .rating {
     flex-basis: 100%;
   }
 
